@@ -4,6 +4,10 @@
     #include "4x5.h"
 #elif KEYBOARD_handwired_dactyl_manuform_4x6
     #include "4x6.h"
+#elif KEYBOARD_handwired_dactyl_manuform_4x6_5
+    #include "4x6.h"
+#elif KEYBOARD_handwired_dactyl_manuform_4x6_corne
+    #include "4x6.h"
 #elif KEYBOARD_handwired_dactyl_manuform_5x6
     #include "5x6.h"
 #elif KEYBOARD_handwired_dactyl_manuform_5x6_5
