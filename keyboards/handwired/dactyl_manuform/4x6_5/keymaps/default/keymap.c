@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		  KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,KC_ENTER,\
 	  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-		                      LOWER, KC_LALT,  KC_SPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_BSPACE,  KC_ENTER,  RAISE \
+		                      LOWER, KC_LALT,  KC_BSPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_SPACE,  KC_ENTER,  RAISE \
 		                                  //|--------------------------|  |--------------------------|
 	),
 
@@ -146,15 +146,15 @@ void persistent_default_layer_set(uint16_t default_layer) {
 void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) { /* First encoder */
         if (clockwise) {
-            tap_code(KC_PGDN);
+            tap_code(KC_DOWN);
         } else {
-            tap_code(KC_PGUP);
+            tap_code(KC_UP);
         }
     } else if (index == 1) { /* Second encoder */
         if (clockwise) {
-            tap_code(KC_VOLD);
+            tap_code(KC_LEFT);
         } else {
-            tap_code(KC_VOLU);
+            tap_code(KC_RIGHT);
         }
     }
 }
