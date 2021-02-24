@@ -17,32 +17,12 @@
 #define LOWER MO(_LOWER)
 
 enum {
-    TD1,
-    TD2,
-    TD3,
-    TD4,
-    TD5,
-    TD6,
-    TD7,
-    TD8,
-    TD9,
-    TD10,
-    TD11
+    TD1
 };
 
 // Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [TD1] = ACTION_TAP_DANCE_DOUBLE(KC_EXCLAIM, KC_AT),
-    [TD2] = ACTION_TAP_DANCE_DOUBLE(KC_HASH, KC_DOLLAR),
-    [TD3] = ACTION_TAP_DANCE_DOUBLE(KC_PERCENT, KC_CIRCUMFLEX),
-    [TD4] = ACTION_TAP_DANCE_DOUBLE(KC_AMPERSAND, KC_ASTERISK),
-    [TD5] = ACTION_TAP_DANCE_DOUBLE(KC_LEFT_PAREN, KC_RIGHT_PAREN),
-    [TD6] = ACTION_TAP_DANCE_DOUBLE(KC_MINUS, KC_EQUAL),
-    [TD7] = ACTION_TAP_DANCE_DOUBLE(KC_LBRACKET, KC_RBRACKET),
-    [TD8] = ACTION_TAP_DANCE_DOUBLE(KC_BSLASH, KC_SLASH),
-    [TD9] = ACTION_TAP_DANCE_DOUBLE(KC_SCOLON, KC_QUOTE),
-    [TD10] = ACTION_TAP_DANCE_DOUBLE(KC_COMMA, KC_DOT),
-    [TD11] = ACTION_TAP_DANCE_DOUBLE(KC_GRAVE, KC_DOT)
+    [TD1] = ACTION_TAP_DANCE_DOUBLE(KC_GRAVE, KC_DOT)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -79,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		  KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCOLON, KC_QUOT,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,KC_ENTER,\
+		  KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LSFT,\
 	  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 		                      LOWER, KC_LALT,  KC_BSPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_SPACE,  KC_ENTER,  RAISE \
 		                                  //|--------------------------|  |--------------------------|
@@ -88,11 +68,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_LOWER] = LAYOUT( \
 	  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-		  KC_TILD, KC_BTN1, KC_MS_U, KC_BTN2, XXXXXXX, XXXXXXX,                      XXXXXXX, TD(TD2), XXXXXXX, XXXXXXX, XXXXXXX, RESET  ,\
+		  KC_TILD, KC_BTN1, KC_MS_U, KC_BTN2, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET  ,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		  KC_LSFT, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_LCTL, KC_PGUP, KC_PGDN, KC_HOME,  KC_END, XXXXXXX,                      TD(TD3), TD(TD1), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+		  KC_LCTL, KC_PGUP, KC_PGDN, KC_HOME,  KC_END, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 		                      LOWER, KC_LALT,  KC_SPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_BSPACE,  KC_ENTER,  RAISE \
 		                                  //|--------------------------|  |--------------------------|
@@ -112,11 +92,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
 	[_RAISE] = LAYOUT( \
 	  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-		   KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_MINUS, KC_EQUAL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+		   KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_MINUS, KC_EQUAL, TD(TD1), XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_LSFT, TD(TD1), TD(TD2), TD(TD3), TD(TD4), TD(TD5),                       TD(TD6),  TD(TD7), TD(TD8), TD(TD9), TD(TD10), TD(TD11),\
+		  KC_LSFT,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_LCTL,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+		  KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 		                      LOWER, KC_LALT,  KC_SPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_BSPACE,  KC_ENTER,  RAISE \
 		                                  //|--------------------------|  |--------------------------|       
