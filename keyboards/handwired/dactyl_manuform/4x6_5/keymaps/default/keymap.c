@@ -17,17 +17,17 @@
 #define LOWER MO(_LOWER)
 
 enum {
-    TD1 = 1,
-    TD2 = 2,
-    TD3 = 3,
-    TD4 = 4,
-    TD5 = 5,
-    TD6 = 6,
-    TD7 = 7,
-    TD8 = 8,
-    TD9 = 9,
-    TD10 = 10,
-    TD11 = 11
+    TD1,
+    TD2,
+    TD3,
+    TD4,
+    TD5,
+    TD6,
+    TD7,
+    TD8,
+    TD9,
+    TD10,
+    TD11
 };
 
 // Tap Dance Definitions
