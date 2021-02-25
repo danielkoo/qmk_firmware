@@ -1,6 +1,4 @@
 #include QMK_KEYBOARD_H
-
-
 #define _BASE 0
 #define _RAISE 1
 #define _LOWER 2
@@ -74,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		  KC_LCTL, KC_PGUP, KC_PGDN, KC_HOME,  KC_END, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-		                      LOWER, KC_LALT,  KC_SPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_BSPACE,  KC_ENTER,  RAISE \
+		                      LOWER, KC_LALT,  KC_BSPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_SPACE,  KC_ENTER,  RAISE \
 		                                  //|--------------------------|  |--------------------------|
 	),
     /*
@@ -90,15 +88,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		                                  //|--------------------------|  |--------------------------|
 	),
     */
+
 	[_RAISE] = LAYOUT( \
 	  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-		   KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_MINUS, KC_EQUAL, TD(TD1), XXXXXXX, XXXXXXX, XXXXXXX,\
+		   KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      XXXXXXX, KC_BSLASH, KC_GRAVE, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_LSFT,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+		  KC_LSFT,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,                      XXXXXXX, KC_LBRACKET, KC_RBRACKET, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+		  KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MINUS, KC_EQUAL, XXXXXXX, XXXXXXX, XXXXXXX,\
 	  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-		                      LOWER, KC_LALT,  KC_SPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_BSPACE,  KC_ENTER,  RAISE \
+		                      LOWER, KC_LALT,  KC_BSPACE, KC_LGUI, XXXXXXX,    XXXXXXX, KC_LALT, KC_SPACE,  KC_ENTER,  RAISE \
 		                                  //|--------------------------|  |--------------------------|       
 	)
 
